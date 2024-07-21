@@ -1,3 +1,3 @@
-package cheapSharkGameFinder.model
+package cheapSharkGameFinder.model.apiModel
 
-data class CheapestPriceEverApiShark(val price: String, val date : Int)
+data class CheapestPriceEver(val price: String, val date : Int)

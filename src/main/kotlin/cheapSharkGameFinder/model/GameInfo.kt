@@ -1,7 +1,7 @@
-package br.com.nilton.CheapSharkGameFinder
+package cheapSharkGameFinder.model
 
-data class GameInfo(val info : InfoApiShark, val price: CheapestPriceEverApiShark){
-    override fun toString(): String {
-        return info.toString()
-    }
-}
+import cheapSharkGameFinder.model.apiModel.CheapestPriceEver
+import cheapSharkGameFinder.model.apiModel.Deal
+import cheapSharkGameFinder.model.apiModel.InfoApiShark
+
+data class GameInfo(val info : InfoApiShark, val cheapestPriceEver: CheapestPriceEver, val deals : List<Deal>)

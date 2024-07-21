@@ -1,4 +1,3 @@
-package cheapSharkGameFinder.model
+package cheapSharkGameFinder.model.apiModel
 
-class Store {
-}
+data class Store (val storeID : String, val storeName: String)
