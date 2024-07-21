@@ -110,6 +110,7 @@ class GameService {
                 Retail Price: $${bestDeal.retailPrice}
                 
                 Store With Best Price Now: ${store.storeName} at $${bestDeal.price} with ${bestDeal.savings.toInt()}% discount
+                Deal Page: ${bestDeal.getDealPage()}
                 Cheapest Price Ever: $${game?.price}
                
                 """.trimIndent())
