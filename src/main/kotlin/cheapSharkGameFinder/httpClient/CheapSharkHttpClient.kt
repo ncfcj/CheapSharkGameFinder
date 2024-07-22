@@ -1,4 +1,4 @@
-package cheapSharkGameFinder.service
+package cheapSharkGameFinder.httpClient
 
 import java.net.URI
 import java.net.http.HttpClient
@@ -9,7 +9,7 @@ class CheapSharkHttpClient {
     private val baseAddress = "https://www.cheapshark.com/api/1.0"
     private val client : HttpClient = HttpClient.newHttpClient()
 
-    fun getGame(gameId: String) : String {
+    fun getGameById(gameId: String) : String {
         val endpointAddress = "$baseAddress/games?id=$gameId"
 
         val request : HttpRequest = HttpRequest.newBuilder()

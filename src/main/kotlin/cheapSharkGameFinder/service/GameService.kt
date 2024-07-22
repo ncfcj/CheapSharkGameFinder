@@ -1,32 +1,33 @@
 package cheapSharkGameFinder.service
 
+import cheapSharkGameFinder.httpClient.CheapSharkHttpClient
 import cheapSharkGameFinder.model.Game
 import cheapSharkGameFinder.model.GameInfo
 import cheapSharkGameFinder.model.apiModel.Deal
 import cheapSharkGameFinder.model.apiModel.Store
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import java.util.*
 
 class GameService {
     private val httpClient = CheapSharkHttpClient()
     private val gson = Gson()
     private val scanner = Scanner(System.`in`)
+    private val storeService = StoreService()
+    private val dealService = DealService()
 
-    fun getGameDetails(){
+    fun getGameDetailsById(){
         val gameId = readGameId()
 
         var responseJson : String? = null
 
         runCatching {
-            responseJson = httpClient
-                .getGame(gameId)
+            responseJson = httpClient.getGameById(gameId)
         }.onFailure { return }
 
         val gameInfo = getGameInfoFromJson(responseJson)
-        val storeList = getStores()
-        val bestDeal = getBestDeal(gameInfo.deals)
-        val storeWithBestPrice = getStoreWithBestPrice(bestDeal, storeList)
+        val storeList = storeService.getStores()
+        val bestDeal = dealService.getBestDeal(gameInfo.deals)
+        val storeWithBestPrice = storeService.getStoreWithBestPrice(bestDeal, storeList)
 
         writeGameInfo(gameInfo, storeWithBestPrice, bestDeal)
     }
@@ -45,12 +46,6 @@ class GameService {
         return doAnotherSearch(answer)
     }
 
-    private fun getStores() : List<Store>{
-        val responseJson = httpClient.getStores()
-        val storeList = getStoresFromJson(responseJson)
-        return storeList
-    }
-
     private fun readGameId() : String {
         println("Please type the game id:")
 
@@ -62,23 +57,6 @@ class GameService {
     private fun getGameInfoFromJson(json:String?) : GameInfo {
         val gameInfo = gson.fromJson(json, GameInfo::class.java)
         return gameInfo
-    }
-
-    private fun getStoresFromJson(json: String?) : List<Store> {
-        val storeListType = object : TypeToken<List<Store>>() {}.type
-        val storeList = gson.fromJson<List<Store>>(json, storeListType)
-        return storeList
-    }
-
-    private fun getStoreWithBestPrice(bestDeal: Deal, storeList : List<Store>) : Store{
-        val dealStore = storeList.first { it.storeID == bestDeal.storeID }
-
-        return dealStore
-    }
-
-    private fun getBestDeal(dealList: List<Deal>) : Deal{
-        val bestDeal = dealList.minBy { it.price }
-        return bestDeal
     }
 
     private fun writeGameInfo(gameInfo: GameInfo, store: Store, bestDeal: Deal){

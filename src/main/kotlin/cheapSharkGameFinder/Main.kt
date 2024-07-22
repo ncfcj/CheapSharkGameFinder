@@ -8,7 +8,7 @@ fun main() {
     var continueProgram = true
 
     while(continueProgram == true) {
-        gameService.getGameDetails()
+        gameService.getGameDetailsById()
         continueProgram = gameService.wantToSearchAnotherGame()
     }
 }
