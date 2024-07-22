@@ -13,9 +13,13 @@ Just run using any Kotlin supported IDE
 - List manipulation
 - Http request for API consumption
 - Json desserialization using Gson
+- Iteration using while loop
 
 ## Future improvements 💡
 - Search by name
+- Add game discount alert
+- Create UI
+- Unit testing with JUnit
 
 ## Contributing 🤝
 
