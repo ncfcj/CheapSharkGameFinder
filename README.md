@@ -19,6 +19,7 @@ Just run using any Kotlin supported IDE
 - Search by name
 - Add game discount alert
 - Create UI
+- Unit testing with JUnit
 
 ## Contributing 🤝
 
