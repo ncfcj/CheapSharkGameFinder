@@ -20,6 +20,7 @@ Just run using any Kotlin supported IDE
 - Add game discount alert
 - Create UI
 - Unit testing with JUnit
+- CI/CD using Github Actions
 
 ## Contributing 🤝
 
