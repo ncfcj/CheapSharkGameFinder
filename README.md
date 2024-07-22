@@ -17,6 +17,7 @@ Just run using any Kotlin supported IDE
 
 ## Future improvements 💡
 - Search by name
+- Add game discount alert
 
 ## Contributing 🤝
 
