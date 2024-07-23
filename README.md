@@ -6,7 +6,7 @@ A simple Kotlin console application that searches for a game in the CheapSharkAP
 
 Just run using any Kotlin supported IDE
 
-## Concepts used in Project 💡🤔
+## Concepts used in Project 💡
 
 - Null Safety
 - Treating exceptions with runCatching
