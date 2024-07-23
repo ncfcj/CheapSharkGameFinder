@@ -17,7 +17,7 @@ Just run using any Kotlin supported IDE
 - Contract implementation with interfaces
 
 ## Future improvements 🤔
-- Search by name
+- Search by name ✅
 - Add game discount alert
 - Create UI
 - Unit testing with JUnit and Testcontainers
