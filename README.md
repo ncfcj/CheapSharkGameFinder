@@ -19,7 +19,7 @@ Just run using any Kotlin supported IDE
 - Search by name
 - Add game discount alert
 - Create UI
-- Unit testing with JUnit
+- Unit testing with JUnit and Testcontainers
 - CI/CD using Github Actions
 - Run through docker container with Dockerfile image
 
