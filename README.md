@@ -21,6 +21,7 @@ Just run using any Kotlin supported IDE
 - Create UI
 - Unit testing with JUnit
 - CI/CD using Github Actions
+- Run through docker container with Dockerfile image
 
 ## Contributing 🤝
 
