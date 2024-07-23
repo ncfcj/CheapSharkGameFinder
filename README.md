@@ -14,6 +14,7 @@ Just run using any Kotlin supported IDE
 - Http request for API consumption
 - Json desserialization using Gson
 - Iteration using while loop
+- Contract implementation with interfaces
 
 ## Future improvements 💡
 - Search by name
