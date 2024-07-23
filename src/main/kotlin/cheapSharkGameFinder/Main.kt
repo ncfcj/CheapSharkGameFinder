@@ -1,14 +1,13 @@
 package cheapSharkGameFinder
 
-import cheapSharkGameFinder.service.GameService
+import cheapSharkGameFinder.services.MenuService
 
 fun main() {
-    val gameService = GameService()
-
     var continueProgram = true
 
-    while(continueProgram == true) {
-        gameService.getGameDetailsById()
-        continueProgram = gameService.wantToSearchAnotherGame()
+    while(continueProgram) {
+        MenuService.showMainMenu()
+        continueProgram = MenuService.wantToSearchAnotherGame()
     }
 }
+
