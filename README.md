@@ -19,6 +19,7 @@ Just run using any Kotlin supported IDE
 ## Future improvements 🤔
 - Search by name ✅
 - Apply Kotlin Multiplatform
+- Use Retrofit for API Consumption
 - Add game discount alert
 - Create UI for Android
 - Create UI for Desktop 
