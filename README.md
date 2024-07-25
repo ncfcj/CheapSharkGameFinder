@@ -18,8 +18,10 @@ Just run using any Kotlin supported IDE
 
 ## Future improvements 🤔
 - Search by name ✅
+- Apply Kotlin Multiplatform
 - Add game discount alert
-- Create UI
+- Create UI for Android
+- Create UI for Desktop 
 - Unit testing with JUnit and Testcontainers
 - CI/CD using Github Actions
 - Run through docker container with Dockerfile image
